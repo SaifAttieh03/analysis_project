@@ -45,6 +45,7 @@ df.to_csv(file_path, index=False)
 print("--------Now i will display the first 5 modified rows--------")
 print(df.head())
 #Largest salary
-max_salary_row = df.loc[df['Annual Salary'].max()]
+temp_column = pd.to_numeric(df['Annual Salary'], errors='coerce')
+max_salary_row = temp_column.max()
 print("the largest salary:")
 print(max_salary_row)
